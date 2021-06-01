@@ -285,7 +285,7 @@ def generate_commit_list(tz):
             if day['percent'] > max_element['percent']:
                 max_element = day
         days_title = translate['I am Most Productive on'] % max_element['name']
-        string = string + '📅 **' + days_title + '** \n\n' + '```text\n' + make_commit_list(dayOfWeek) + '\n\n```\n'
+        string = string + '#### 📅 ' + days_title + ' \n\n' + '```text\n' + make_commit_list(dayOfWeek) + '\n\n```\n'
 
     return string
 
@@ -305,7 +305,7 @@ def get_waka_time_stats():
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
 
-        stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
+        stats += '📊 ####' + translate['This Week I Spend My Time On'] + ' \n\n'
         stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
@@ -395,7 +395,7 @@ def get_line_of_code():
 
 
 def get_short_info(github):
-    string = '**🐱 ' + translate['My GitHub Data'] + '** \n\n'
+    string = '#### 🐙' + translate['My GitHub Data'] + ' \n\n'
     user_info = github.get_user()
     if user_info.disk_usage is None:
         disk_usage = humanize.naturalsize(0)
@@ -407,9 +407,9 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '> 🏆 ' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
+        string += '🏆 ' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
 
-    string += '> 📦 ' + translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
+    string += '📦 ' + translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
     is_hireable = user_info.hireable
     public_repo = user_info.public_repos
     private_repo = user_info.owned_private_repos
@@ -420,10 +420,10 @@ def get_short_info(github):
     else:
         string += "> 🚫 " + translate["Not Opted to Hire"] + "\n > \n"
 
-    string += '> 📜 '
-    string += translate['public repositories'] % public_repo + " " + '\n > \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n > \n'
-    string += '> 🔑 '
-    string += translate['private repositories'] % private_repo + " " +' \n > \n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '\n > \n'
+    string += '📜 '
+    string += translate['public repositories'] % public_repo + " " + '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
+    string += '🔑 '
+    string += translate['private repositories'] % private_repo + " " +' \n \n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '\n \n'
 
     return string
 
