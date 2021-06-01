@@ -395,7 +395,7 @@ def get_line_of_code():
 
 
 def get_short_info(github):
-    string = '#### 🐙' + translate['My GitHub Data'] + ' \n\n'
+    string = '#### 🐙 ' + translate['My GitHub Data'] + ' \n\n'
     user_info = github.get_user()
     if user_info.disk_usage is None:
         disk_usage = humanize.naturalsize(0)
@@ -407,7 +407,7 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '🏆 ' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
+        string += '🏆 **' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '**\n > \n'
 
     string += '📦 ' + translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
     is_hireable = user_info.hireable
@@ -415,11 +415,10 @@ def get_short_info(github):
     private_repo = user_info.owned_private_repos
     if private_repo is None:
         private_repo = 0
-    if is_hireable:
-        string += "> 💼 " + translate["Opted to Hire"] + "\n > \n"
-    else:
-        string += "> 🚫 " + translate["Not Opted to Hire"] + "\n > \n"
-
+    ''' if is_hireable:
+    '''    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
+    ''' else:
+    '''    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
     string += '📜 '
     string += translate['public repositories'] % public_repo + " " + '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
     string += '🔑 '
@@ -442,7 +441,7 @@ def get_stats(github):
     if show_loc.lower() in truthy:
         stats += '![Lines of code](https://img.shields.io/badge/' + quote(
             str(translate['From Hello World I have written'])) + '-' + quote(
-            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-blue)\n\n'
+            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-%23333)\n\n'
 
     if show_short_info.lower() in truthy:
         stats += get_short_info(github)
