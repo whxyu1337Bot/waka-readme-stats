@@ -305,7 +305,7 @@ def get_waka_time_stats():
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
 
-        stats += '📊 ####' + translate['This Week I Spend My Time On'] + ' \n\n'
+        stats += '📊 #### ' + translate['This Week I Spend My Time On'] + ' \n\n'
         stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
@@ -407,7 +407,7 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '🏆 **' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '**\n > \n'
+        string += '🏆 ' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
 
     string += '📦 ' + translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
     is_hireable = user_info.hireable
