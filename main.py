@@ -415,10 +415,10 @@ def get_short_info(github):
     private_repo = user_info.owned_private_repos
     if private_repo is None:
         private_repo = 0
-    ''' if is_hireable:
-    '''    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
-    ''' else:
-    '''    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
+    #if is_hireable:
+    #    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
+    #else:
+    #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
     string += '📜 '
     string += translate['public repositories'] % public_repo + " " + '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
     string += '🔑 '
