@@ -334,7 +334,7 @@ def get_waka_time_stats():
             else:
                 lang_list = make_list(data['data']['languages'])
             stats = stats + '💬 ' + \
-                translate['Languages'] + ': \n' + lang_list + '\n'
+                translate['Languages'] + ': \n' + lang_list + '\n\n'
 
         if showEditors.lower() in truthy:
             empty = False
@@ -343,7 +343,7 @@ def get_waka_time_stats():
             else:
                 edit_list = make_list(data['data']['editors'])
             stats = stats + '🔥 ' + \
-                translate['Editors'] + ': \n' + edit_list + '\n'
+                translate['Editors'] + ': \n' + edit_list + '\n\n'
 
         if showProjects.lower() in truthy:
             empty = False
@@ -355,7 +355,7 @@ def get_waka_time_stats():
                     data['data']['projects'], key=lambda x: x["percent"], reverse=True)
                 project_list = make_list(data['data']['projects'])
             stats = stats + '🐱‍💻 ' + \
-                translate['Projects'] + ': \n' + project_list + '\n'
+                translate['Projects'] + ': \n' + project_list + '\n\n'
 
         if showOs.lower() in truthy:
             empty = False
@@ -366,7 +366,7 @@ def get_waka_time_stats():
             stats = stats + '💻 ' + \
                 translate['operating system'] + ': \n' + os_list + '\n'
 
-        stats += '```\n\n</details>'
+        stats += '```\n\n'
         if empty:
             return ""
     return stats
@@ -494,8 +494,8 @@ def get_stats(github):
         stats = stats + '![Chart not found](https://raw.githubusercontent.com/' + \
             username + '/' + username + '/' + branch_name + '/charts/bar_graph.png) \n\n'
 
-    return stats
-    # return stats + '</details>'
+    # return stats
+    return stats + '</details>'
 
 
 # def star_me():
