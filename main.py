@@ -284,8 +284,8 @@ def generate_commit_list(tz):
     ]
 
     string = string + '' + title + ' \n\n' + '```text\n' + \
-        make_commit_list(one_day) + '\n\n```\n'
-
+        make_commit_list(one_day) + '\n\n```\n<details><summary>Show more stats</summary>'
+    # Heh, i', don't like python. Idk what to do here lfmao
     if show_days_of_week.lower() in truthy:
         max_element = {
             'percent': 0
@@ -366,7 +366,7 @@ def get_waka_time_stats():
             stats = stats + '💻 ' + \
                 translate['operating system'] + ': \n' + os_list + '\n\n'
 
-        stats += '```\n\n'
+        stats += '```\n\n</details>'
         if empty:
             return ""
     return stats
