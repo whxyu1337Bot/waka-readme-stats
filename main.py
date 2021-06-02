@@ -284,7 +284,7 @@ def generate_commit_list(tz):
     ]
 
     string = string + '<details><summary>✨ Show more stats ✨</summary>\n\n#### ' + title + ' \n\n' + '```text\n' + \
-        make_commit_list(one_day) + '\n\n```\n'
+        make_commit_list(one_day) + '\n```\n'
     # Heh, i', don't like python. Idk what to do here lfmao
     if show_days_of_week.lower() in truthy:
         max_element = {
@@ -446,6 +446,8 @@ def get_short_info(github):
     #    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
     # else:
     #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
+    # string += '- 📝 ' + 'Total lines of code: ' + str(get_line_of_code()) + ' \n\n'
+    string += '- 📝 ' + translate['Total lines of code'] % str(get_line_of_code()) + ' \n\n'
     string += '- 📜 '
     string += translate['public repositories'] % public_repo + " " + \
         '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'

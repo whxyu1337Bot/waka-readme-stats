@@ -29,6 +29,7 @@
   "No Activity Tracked This Week": "No Activity Tracked This Week",
   "My GitHub Data": "My Github Stats",
   "Lines of code": "lines of code",
+  "Total lines of code": "Total lines of code: **%s**",
   "public repository": "**%d** Public Repository",
   "public repositories": "Public Repositories: **%d**",
   "private repository": "**%d** Private Repository",
