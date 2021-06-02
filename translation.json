@@ -33,7 +33,7 @@
   "public repositories": "Public Repositories: **%d**",
   "private repository": "**%d** Private Repository",
   "private repositories": "Private Repositories: **%d**",
-  "I am an Early": "#### 🌞 I work most in the morning",
-  "I am a Night": "#### 🌙 I work most at night."
+  "I am an Early": "#### 🌞 I work most during day",
+  "I am a Night": "#### 🌙 I work most during night."
  }
 }
