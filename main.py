@@ -283,7 +283,7 @@ def generate_commit_list(tz):
             Sunday) + " commits", "percent": round((Sunday / sum_week) * 100, 2)},
     ]
 
-    string = string + '<details><summary>Show more stats</summary>\n' + title + ' \n\n' + '```text\n' + \
+    string = string + '<details><summary>✨ Show more stats ✨</summary>\n####' + title + ' \n\n' + '```text\n' + \
         make_commit_list(one_day) + '\n\n```\n'
     # Heh, i', don't like python. Idk what to do here lfmao
     if show_days_of_week.lower() in truthy:
@@ -494,6 +494,7 @@ def get_stats(github):
             username + '/' + username + '/' + branch_name + '/charts/bar_graph.png) \n\n'
 
     return stats
+    # return stats + '</details>'
 
 
 # def star_me():
