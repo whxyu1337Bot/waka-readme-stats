@@ -418,7 +418,7 @@ def get_line_of_code():
 
 
 def get_short_info(github):
-    string = '#### 🐙 ' + translate['My GitHub Data'] + ' \n\n'
+    string = ' '
     user_info = github.get_user()
     if user_info.disk_usage is None:
         disk_usage = humanize.naturalsize(0)
