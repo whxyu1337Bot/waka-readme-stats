@@ -283,7 +283,7 @@ def generate_commit_list(tz):
             Sunday) + " commits", "percent": round((Sunday / sum_week) * 100, 2)},
     ]
 
-    string = string + '<details><summary>✨ Show more stats ✨</summary>\n####' + title + ' \n\n' + '```text\n' + \
+    string = string + '<details><summary>✨ Show more stats ✨</summary>\n\n#### ' + title + ' \n\n' + '```text\n' + \
         make_commit_list(one_day) + '\n\n```\n'
     # Heh, i', don't like python. Idk what to do here lfmao
     if show_days_of_week.lower() in truthy:
@@ -470,10 +470,9 @@ def get_stats(github):
             data['count']) + '-blue)\n\n'
 
     if show_loc.lower() in truthy:
-        stats += '![Lines of code](https://img.shields.io/badge/' + quote(
-            str(translate['From Hello World I have written'])) + '-' + quote(
-            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-%23333)\n\n'
-
+        stats += '![Lines of code](https://img.shields.io/static/v1?label=' + quote(
+            str(translate['From Hello World I have written'])) + '&message=' + quote(
+            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '&color=333&style=flat-square&logo=github)\n\n'
     if show_short_info.lower() in truthy:
         stats += get_short_info(github)
 
