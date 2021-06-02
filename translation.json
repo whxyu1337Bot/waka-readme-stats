@@ -70,8 +70,8 @@
     "public repositories": "**%d** Public Repositories",
     "private repository": "**%d** Private Repository",
     "private repositories": "**%d** Private Repositories",
-    "I am an Early": "🌞 I work most in the morning",
-    "I am a Night": "🌙 I work most at night."
+    "I am an Early": "#### 🌞 I work most in the morning",
+    "I am a Night": "#### 🌙 I work most at night."
   },
   "it": {
     "Monday": "Lunedì",
