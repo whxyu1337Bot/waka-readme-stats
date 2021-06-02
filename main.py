@@ -407,7 +407,7 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '🏆 ' + translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
+        string += translate['Contributions in the year'] % (humanize.intcomma(total), year) + '\n > \n'
 
     string += '📦 ' + translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
     is_hireable = user_info.hireable
@@ -419,9 +419,7 @@ def get_short_info(github):
     #    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
     #else:
     #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
-    string += '📜 '
     string += translate['public repositories'] % public_repo + " " + '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
-    string += '🔑 '
     string += translate['private repositories'] % private_repo + " " +' \n \n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '\n \n'
 
     return string
