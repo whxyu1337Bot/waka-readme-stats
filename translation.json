@@ -53,7 +53,7 @@
     "operating system": "Operating System",
     "Projects": "Projects",
     "Timezone": "Time Zone",
-    "Contributions in the year": "Contributions in the %s: **%s**",
+    "Contributions in the year": "Contributions: **%s** (This year)",
     "Used in GitHub's Storage": "Github Storage: **%s** used",
     "Opted to Hire": "Opened to hire",
     "Not Opted to Hire": "Not opened to Hire",
