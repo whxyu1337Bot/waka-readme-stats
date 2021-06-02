@@ -274,7 +274,7 @@ def generate_commit_list(tz):
         {"name": translate['Sunday'], "text": str(Sunday) + " commits", "percent": round((Sunday / sum_week) * 100, 2)},
     ]
 
-    string = string + '**' + title + '** \n\n' + '```text\n' + make_commit_list(one_day) + '\n\n```\n'
+    string = string + '' + title + ' \n\n' + '```text\n' + make_commit_list(one_day) + '\n\n```\n'
 
     if show_days_of_week.lower() in truthy:
         max_element = {
