@@ -448,7 +448,7 @@ def get_short_info(github):
     #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
     # string += '- 📝 ' + 'Total lines of code: ' + str(get_line_of_code()) + ' \n\n'
     string += '- 📝 ' + translate['Total lines of code'] % str(get_line_of_code()) + ' \n\n'
-    string += '- 📜 '
+    string += '- 📚 '
     string += translate['public repositories'] % public_repo + " " + \
         '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
     string += '- 🔑 '
