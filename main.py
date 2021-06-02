@@ -296,7 +296,7 @@ def generate_commit_list(tz):
                 max_element = day
         days_title = translate['I am Most Productive on'] % max_element['name']
         string = string + '#### 📅 ' + days_title + ' \n\n' + \
-            '```text\n' + make_commit_list(dayOfWeek) + '\n\n```\n'
+            '```text\n' + make_commit_list(dayOfWeek) + '\n```\n'
 
     return string
 
@@ -334,7 +334,7 @@ def get_waka_time_stats():
             else:
                 lang_list = make_list(data['data']['languages'])
             stats = stats + '💬 ' + \
-                translate['Languages'] + ': \n' + lang_list + '\n\n'
+                translate['Languages'] + ': \n' + lang_list + '\n'
 
         if showEditors.lower() in truthy:
             empty = False
@@ -343,7 +343,7 @@ def get_waka_time_stats():
             else:
                 edit_list = make_list(data['data']['editors'])
             stats = stats + '🔥 ' + \
-                translate['Editors'] + ': \n' + edit_list + '\n\n'
+                translate['Editors'] + ': \n' + edit_list + '\n'
 
         if showProjects.lower() in truthy:
             empty = False
@@ -355,7 +355,7 @@ def get_waka_time_stats():
                     data['data']['projects'], key=lambda x: x["percent"], reverse=True)
                 project_list = make_list(data['data']['projects'])
             stats = stats + '🐱‍💻 ' + \
-                translate['Projects'] + ': \n' + project_list + '\n\n'
+                translate['Projects'] + ': \n' + project_list + '\n'
 
         if showOs.lower() in truthy:
             empty = False
@@ -364,7 +364,7 @@ def get_waka_time_stats():
             else:
                 os_list = make_list(data['data']['operating_systems'])
             stats = stats + '💻 ' + \
-                translate['operating system'] + ': \n' + os_list + '\n\n'
+                translate['operating system'] + ': \n' + os_list + '\n'
 
         stats += '```\n\n</details>'
         if empty:
@@ -403,7 +403,7 @@ def generate_language_per_repo(result):
         })
 
     title = translate['I Mostly Code in'] % most_language_repo
-    return '**' + title + '** \n\n' + '```text\n' + make_list(data) + '\n\n```\n'
+    return '**' + title + '** \n\n' + '```text\n' + make_list(data) + '\n```\n'
 
 
 def get_line_of_code():
@@ -431,12 +431,12 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '🏆 ' + \
+        string += '- 🏆 ' + \
             translate['Contributions in the year'] % (
-                year, humanize.intcomma(total)) + '\n > \n'
+                year, humanize.intcomma(total)) + '\n\n'
 
-    string += '📦 ' + \
-        translate["Used in GitHub's Storage"] % disk_usage + ' \n > \n'
+    string += '- 📦 ' + \
+        translate["Used in GitHub's Storage"] % disk_usage + ' \n\n'
     is_hireable = user_info.hireable
     public_repo = user_info.public_repos
     private_repo = user_info.owned_private_repos
@@ -446,10 +446,10 @@ def get_short_info(github):
     #    string += "💼 " + translate["Opted to Hire"] + "\n > \n"
     # else:
     #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
-    string += '📜 '
+    string += '- 📜 '
     string += translate['public repositories'] % public_repo + " " + \
         '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '\n \n'
-    string += '🔑 '
+    string += '- 🔑 '
     string += translate['private repositories'] % private_repo + " " + \
         ' \n \n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '\n \n'
 
