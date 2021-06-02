@@ -283,7 +283,7 @@ def generate_commit_list(tz):
             Sunday) + " commits", "percent": round((Sunday / sum_week) * 100, 2)},
     ]
 
-    string = string + '' + title + ' \n\n' + '```text\n <details><summary>Show more stats</summary>' + \
+    string = string + '<details><summary>Show more stats</summary>' + title + ' \n\n' + '```text\n' + \
         make_commit_list(one_day) + '\n\n```\n'
     # Heh, i', don't like python. Idk what to do here lfmao
     if show_days_of_week.lower() in truthy:
