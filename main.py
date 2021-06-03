@@ -450,10 +450,10 @@ def get_short_info(github):
     string += '| 📝 ' + translate['Total lines of code'] % str(get_line_of_code()) + '|\n'
     string += '| 📚 '
     string += translate['public repositories'] % public_repo + " " + \
-        '\n \n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '|\n'
+        '|\n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '|\n'
     string += '| 🔑 '
     string += translate['private repositories'] % private_repo + " " + \
-        ' \n \n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '|\n'
+        '|\n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '|\n'
 
     return string
 

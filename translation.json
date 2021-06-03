@@ -30,9 +30,9 @@
   "My GitHub Data": "My Github Stats",
   "Lines of code": "lines of code",
   "Total lines of code": "Total lines of code: | %s",
-  "public repository": "Public Repository: | only %d",
+  "public repository": "Public Repositories: | only %d",
   "public repositories": "Public Repositories: | %d",
-  "private repository": "Private Repository: | only %d",
+  "private repository": "Private Repositories: | only %d",
   "private repositories": "Private Repositories: | %d",
   "I am an Early": "🌞 I work most during day",
   "I am a Night": "🌙 I work most during night."
