@@ -431,9 +431,9 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '- 🏆 ' + \
+        string += '| <!-- --> | <!-- --> |\n|-|-|\n| ' + \
             translate['Contributions in the year'] % (
-                year, humanize.intcomma(total)) + '\n\n'
+                year, humanize.intcomma(total)) + '|\n'
 
     string += '- 📦 ' + \
         translate["Used in GitHub's Storage"] % disk_usage + ' \n\n'
