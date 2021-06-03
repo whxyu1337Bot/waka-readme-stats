@@ -542,7 +542,7 @@ if __name__ == '__main__':
             committer = InputGitAuthor(username, email)
         else:
             committer = InputGitAuthor(
-                'readme-bot', '41898282+github-actions[bot]@users.noreply.github.com')
+                'IgorKowalczykBot', 'igor.kowalczyk.bot@onet.pl')
         if new_readme != rdmd:
             try:
                 repo.update_file(path=contents.path, message='[Bot] Update user stats',
