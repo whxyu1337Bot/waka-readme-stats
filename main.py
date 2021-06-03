@@ -431,11 +431,11 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         year = data['years'][0]['year']
-        string += '| <!-- --> | <!-- --> |\n|-|-|\n| 🏆 ' + \
+        string += '| 🏆 Contributions (Total) | (soon) |\n|:-:|:-:|\n| **🏆 ' + \
             translate['Contributions in the year'] % (
                 year, humanize.intcomma(total)) + '|\n'
 
-    string += '| 📦 ' + \
+    string += '| **📦 ' + \
         translate["Used in GitHub's Storage"] % disk_usage + '|\n'
     is_hireable = user_info.hireable
     public_repo = user_info.public_repos
@@ -447,11 +447,11 @@ def get_short_info(github):
     # else:
     #    string += "🚫 " + translate["Not Opted to Hire"] + "\n > \n"
     # string += '- 📝 ' + 'Total lines of code: ' + str(get_line_of_code()) + ' \n\n'
-    string += '| 📝 ' + translate['Total lines of code'] % str(get_line_of_code()) + '|\n'
-    string += '| 📚 '
+    string += '| **📝 ' + translate['Total lines of code'] % str(get_line_of_code()) + '|\n'
+    string += '| **📚 '
     string += translate['public repositories'] % public_repo + " " + \
         '|\n' if public_repo != 1 else translate['public repository'] % public_repo + " " + '|\n'
-    string += '| 🔑 '
+    string += '| **🔑 '
     string += translate['private repositories'] % private_repo + " " + \
         '|\n' if private_repo != 1 else translate['private repository'] % private_repo + " " + '|\n'
 
