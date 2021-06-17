@@ -26,6 +26,7 @@ START_COMMENT = '<!--START_SECTION:waka-->'
 END_COMMENT = '<!--END_SECTION:waka-->'
 listReg = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
 
+now = datetime.now()
 waka_key = os.getenv('INPUT_WAKATIME_API_KEY')
 ghtoken = os.getenv('INPUT_GH_TOKEN')
 showTimeZone = os.getenv('INPUT_SHOW_TIMEZONE')
@@ -495,7 +496,8 @@ def get_stats(github):
             username + '/' + username + '/' + branch_name + '/charts/bar_graph.png) \n\n'
 
     # return stats
-    return stats + '</details>'
+    
+    return stats + '</details>\n\n<!-- Wakatime stats generated at ' + now + ' -->'
 
 
 # def star_me():
