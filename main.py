@@ -26,7 +26,7 @@ START_COMMENT = '<!--START_SECTION:waka-->'
 END_COMMENT = '<!--END_SECTION:waka-->'
 listReg = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
 
-now = datetime.now()
+now = datetime.datetime.now()
 waka_key = os.getenv('INPUT_WAKATIME_API_KEY')
 ghtoken = os.getenv('INPUT_GH_TOKEN')
 showTimeZone = os.getenv('INPUT_SHOW_TIMEZONE')
