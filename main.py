@@ -497,7 +497,8 @@ def get_stats(github):
 
     # return stats
     
-    return stats + '</details>\n\n<!-- Wakatime stats generated at ' + now + ' -->'
+    return stats + '</details>\n\n<!-- Wakatime stats generated at ' + str(now) + ' -->'
+    # Yea, noob python
 
 
 # def star_me():
