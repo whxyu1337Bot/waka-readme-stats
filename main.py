@@ -432,6 +432,8 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         total_all_time = [each_year['total'] for each_year in data['years']]
+        for element in data['years']:
+            print(element)
         year = data['years'][0]['year']
         string += '| 🏆 Contributions (Total) | ' + humanize.intcomma(total_all_time) + ' |\n|:-:|:-:|\n| **🏆 ' + \
             translate['Contributions in the year'] % (
