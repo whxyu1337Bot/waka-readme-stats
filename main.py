@@ -431,7 +431,7 @@ def get_short_info(github):
     if request.status_code == 200:
         data = request.json()
         total = data['years'][0]['total']
-        total_all_time = ' '
+        total_all_time = 0
         for element in data['years']:
             total_all_time += element['total']
         print(total_all_time)
