@@ -431,9 +431,10 @@ def get_short_info(github):
     if request.status_code == 200:
         data = request.json()
         total = data['years'][0]['total']
-        total_all_time = 12
+        total_all_time = ' '
         for element in data['years']:
-            print(element['total'])
+            total_all_time += element['total']
+        print(total_all_time)
         year = data['years'][0]['year']
         string += '| 🏆 Contributions (Total) | (Soon!) |\n|:-:|:-:|\n| **🏆 ' + \
             translate['Contributions in the year'] % (
