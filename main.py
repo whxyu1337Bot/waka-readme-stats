@@ -432,6 +432,7 @@ def get_short_info(github):
         data = request.json()
         total = data['years'][0]['total']
         total_all_time = 0
+        time.sleep(0.01)
         for element in data['years']:
             total_all_time += element['total']
         print("Total all time " + str(total_all_time))
